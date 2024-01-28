@@ -1,0 +1,441 @@
+{
+	"info": {
+		"_postman_id": "a4c7aa90-0497-45bf-be2b-2b64f8e107cf",
+		"name": "eShop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/products/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"products",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/products/1",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"chuj\",\r\n    \"description\": \"twoja stara\",\r\n    \"price\": \"300\",\r\n    \"category\": \"Home\",\r\n    \"stock\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/products/new",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"chuj chuj\",\r\n    \"description\": \"twoja stary\",\r\n    \"price\": \"300\",\r\n    \"category\": \"Home\",\r\n    \"stock\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/products/4/update/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"4",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "products delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/products/4/delete/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"products",
+						"4",
+						"delete",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"elo\",\r\n    \"last_name\": \"last_name\",\r\n    \"email\": \"twoja@stara.pl\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/register/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"register",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "api token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"twoja@stara.pl\",\r\n    \"password\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/token/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "current user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzNTQzMTA4LCJpYXQiOjE2ODMyODM5MDgsImp0aSI6IjkzOTE5OGU3ZGJhYjRiMWI5MDViZDg5YWUwOGVkMzkzIiwidXNlcl9pZCI6NH0.V09EPLEzD-3IIDk-vx9K_woFeBJnA5N_3aEFteKmP4s",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{DOMAIN}}/api/me/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"me",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzNTQzMTA4LCJpYXQiOjE2ODMyODM5MDgsImp0aSI6IjkzOTE5OGU3ZGJhYjRiMWI5MDViZDg5YWUwOGVkMzkzIiwidXNlcl9pZCI6NH0.V09EPLEzD-3IIDk-vx9K_woFeBJnA5N_3aEFteKmP4s",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"elo elo\",\r\n    \"last_name\": \"last_name\",\r\n    \"email\": \"twoja@stara.pl\",\r\n    \"username\": \"twoja@stara.pl\",\r\n    \"password\":\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/me/update/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"me",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "review",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"rating\": 4,\r\n    \"comment\": \"czaderskie gówno\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/1/review/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"1",
+						"review",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete review",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjgzNjM1OTQxLCJpYXQiOjE2ODMzNzY3NDEsImp0aSI6ImVlYWYwZGM2ZmJhMjRhYTU5NDU3MjIwN2I5N2Q4ZDgyIiwidXNlcl9pZCI6NH0.fwkljUzb3Nc8KSKI-kA33t9FYVZgNoH26uTzwgCJCw4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/1/review/delete",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"1",
+						"review",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forgot_password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"marcin.pieczara@wp.pl\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/forgot_password/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"forgot_password",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reset password",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0MzE0Njk2LCJpYXQiOjE2ODQwNTU0OTYsImp0aSI6IjBiN2QxNjU2MDYxNjRlMDFhYjE4NjNiZTQ2YzQxYjQ3IiwidXNlcl9pZCI6NH0.-g25YnMsr9qlgdA6KuTx0ecVCe55p6-Z7RMsYoJ_s7c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\": \"12345678\",\r\n    \"confirmPassword\": \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/reset_password/eQPm4nsAEfmX8xUMf70TFiSKHCWznYRXbrBG3wDtSMUJ4uSGT1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"reset_password",
+						"eQPm4nsAEfmX8xUMf70TFiSKHCWznYRXbrBG3wDtSMUJ4uSGT1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new orders ",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0NDI3Nzg0LCJpYXQiOjE2ODQxNjg1ODQsImp0aSI6IjhiODQ1MzNhNjk0OTQ2MDA5NDBiZTRkZWQzNmMxMDc1IiwidXNlcl9pZCI6NH0.TlfyxJDuCBH001I6Rgw-GjHvnIaGbXZ0v7xCba-c1LM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"street\": \"123 Main St\",\r\n  \"city\": \"Anytown\",\r\n  \"state\": \"CA\",\r\n  \"zip_code\": \"12345\",\r\n  \"phone_no\": \"123-456-7890\",\r\n  \"country\": \"United States\",\r\n  \"orderItems\": [\r\n    {\r\n      \"product\": 1,\r\n      \"quantity\": 2,\r\n      \"price\": 1.00\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{DOMAIN}}/api/orders/new/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"orders",
+						"new",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get orders / get order by id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg0NDI3Nzg0LCJpYXQiOjE2ODQxNjg1ODQsImp0aSI6IjhiODQ1MzNhNjk0OTQ2MDA5NDBiZTRkZWQzNmMxMDc1IiwidXNlcl9pZCI6NH0.TlfyxJDuCBH001I6Rgw-GjHvnIaGbXZ0v7xCba-c1LM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/orders/",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"orders",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
